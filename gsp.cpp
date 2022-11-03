@@ -19,6 +19,7 @@ using namespace std;
 
 int main(int argc, char **argv){
     string file_name=argv[1];
+    string line;
     ifstream inFile;
     inFile = ifstream(file_name, ios_base::in);
     if(!inFile.is_open() ){
@@ -26,8 +27,17 @@ int main(int argc, char **argv){
         exit(1);
     }
     else{
-        cout<<"file is open";
+       //cout<<"file is open";
+       while(!inFile.eof()){
+            char z;  
+            getline(inFile, line);
+            cout<<line<<endl;
+            z=getchar();
+            if(z=='$'){
+                cout<<"found the $ sign";
+            }
+
+    }                 
+    //cout<<"File ended";
     }
-
-
 }
