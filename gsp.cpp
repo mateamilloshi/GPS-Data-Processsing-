@@ -27,16 +27,31 @@ int main(int argc, char **argv){
         exit(1);
     }
     else{
-       //cout<<"file is open";
+       //READ LINE BY LINE;
        while(!inFile.eof()){
-            char z;  
+            //char z;
+            string s;
+            int c=0;
             getline(inFile, line);
-            cout<<line<<endl;
-            z=getchar();
-            if(z=='$'){
-                cout<<"found the $ sign";
+            //cout<<line<<endl;  
+            //SAVE GPGGA      
+            for(int i=1; i<=5;i++){
+                //cout<<line[i];
+                s+=line[i];
             }
+            //cout<<s;
+            //check GPGGA = s
+            if(s=="GPGGA"){
+                cout<<"matt is helpful"<<endl;
+                c++;
+            }
+            else{
+                cout<<"fail"<<endl;
+                continue;
 
+            }
+            cout<<c;
+            //break;
     }                 
     //cout<<"File ended";
     }
